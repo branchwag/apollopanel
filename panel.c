@@ -25,6 +25,13 @@ int main(void) {
 	  //black buttons below
 	  DrawRectangle(30, 550, 80, 80, BLACK); //VERB button
 	  DrawRectangle(30, 640, 80, 80, BLACK); //NOUN button
+	
+	  DrawRectangle(120, 530, 80, 80, BLACK); // + button
+	  DrawRectangle(210, 530, 80, 80, BLACK); // 7 button
+	  DrawRectangle(300, 530, 80, 80, BLACK); // 8 button
+	  DrawRectangle(390, 530, 80, 80, BLACK); // 9 button
+	  DrawRectangle(480, 530, 80, 80, BLACK); // CLR button
+	
 	  DrawRectangle(680, 550, 80, 80, BLACK); //ENTR button
 	  DrawRectangle(680, 640, 80, 80, BLACK); //RSET button
 	  EndDrawing();
