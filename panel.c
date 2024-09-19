@@ -1,4 +1,7 @@
 #include "raylib.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
@@ -11,12 +14,11 @@ int main(void) {
 
 	while (!WindowShouldClose()) {
 	  frameCount++;
+	  BeginDrawing();
+	  ClearBackground(RAYWHITE);
+	  EndDrawing();
 	}
 
-	BeginDrawing();
-	ClearBackground(RAYWHITE);
-	
-	EndDrawing();
 	CloseWindow();
 	return 0;
 }
