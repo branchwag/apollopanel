@@ -1,6 +1,8 @@
 # Apollo Panel
 
-Inspired by this youtube video
+Inspired by the YouTube video Light Years Ahead - The 1969 Apollo Guidance Computer:  
+https://www.youtube.com/watch?v=B1J2RMorJXM  
+
 
 To compile:
 ```
