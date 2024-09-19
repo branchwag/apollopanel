@@ -19,8 +19,9 @@ int main(void) {
 	while (!WindowShouldClose()) {
 	  frameCount++;
 	  BeginDrawing();
-	  ClearBackground(BLACK);
+	  ClearBackground(DARKGRAY);
 	  DrawRectangle(posX, posY, rectWidth, rectHeight, DARKGREEN); 
+	  DrawRectangle(30, posY, 300, rectHeight, LIGHTGRAY); 
 	  EndDrawing();
 	}
 
