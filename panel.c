@@ -8,11 +8,19 @@ int main(void) {
 	SetTargetFPS(60);
 	
 	int frameCount = 0;
+	int rectWidth = 400;
+	int rectHeight = 500;
+	int marginTop = 10;
+	int marginSide = 30;
+
+	int posX = SCREEN_HEIGHT - rectWidth - marginSide;
+	int posY = marginTop;
 
 	while (!WindowShouldClose()) {
 	  frameCount++;
 	  BeginDrawing();
-	  ClearBackground(RAYWHITE);
+	  ClearBackground(BLACK);
+	  DrawRectangle(posX, posY, rectWidth, rectHeight, DARKGREEN); 
 	  EndDrawing();
 	}
 
