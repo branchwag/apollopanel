@@ -16,6 +16,11 @@ int main(void) {
 	int posX = SCREEN_HEIGHT - rectWidth - marginSide;
 	int posY = marginTop;
 
+        Font monogram = LoadFont("monogram.ttf");
+	Vector2 position1 = {660, 40};
+	Vector2 position2 = {658, 160};
+	Vector2 position3 = {418, 160};
+
 	while (!WindowShouldClose()) {
 	  frameCount++;
 	  BeginDrawing();
@@ -58,9 +63,9 @@ int main(void) {
 	  DrawRectangle(640, 550, 80, 80, BLACK); //ENTR button
 	  DrawRectangle(640, 640, 80, 80, BLACK); //RSET button
 	
-	  DrawText("PROG", 646, 40, 32, DARKGREEN);
-	  DrawText("NOUN", 646, 160, 32, DARKGREEN);
-	  DrawText("VERB", 404, 160, 32, DARKGREEN);
+	  DrawTextEx(monogram, "PROG", position1, 32, 1, DARKGREEN);
+	  DrawTextEx(monogram, "NOUN", position2, 32, 1, DARKGREEN);
+	  DrawTextEx(monogram, "VERB", position3, 32, 1, DARKGREEN);
 
 	  DrawText("VERB", 104, 575, 26, RAYWHITE);
 	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
