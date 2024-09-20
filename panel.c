@@ -48,7 +48,7 @@ int main(void) {
 	  DrawRectangle(640, 550, 80, 80, BLACK); //ENTR button
 	  DrawRectangle(640, 640, 80, 80, BLACK); //RSET button
 	
-	  DrawText("VERB", 106, 575, 26, RAYWHITE);
+	  DrawText("VERB", 104, 575, 26, RAYWHITE);
 	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
 
 	  DrawText("+", 218, 548, 48, RAYWHITE);
