@@ -22,6 +22,7 @@ int main(void) {
 	  ClearBackground(DARKGRAY);
 	  DrawRectangle(posX, posY, rectWidth, rectHeight, DARKGREEN); 
 	  DrawRectangle(30, posY, 300, rectHeight, LIGHTGRAY); 
+	
 	  //black buttons below
 	  DrawRectangle(100, 550, 80, 80, BLACK); //VERB button
 	  DrawRectangle(100, 640, 80, 80, BLACK); //NOUN button
@@ -46,6 +47,9 @@ int main(void) {
 
 	  DrawRectangle(640, 550, 80, 80, BLACK); //ENTR button
 	  DrawRectangle(640, 640, 80, 80, BLACK); //RSET button
+	
+	  DrawText("VERB", 106, 575, 26, RAYWHITE);
+	  
 	  EndDrawing();
 	}
 
