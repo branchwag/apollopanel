@@ -60,6 +60,7 @@ int main(void) {
 	
 	  DrawText("PROG", 646, 40, 32, DARKGREEN);
 	  DrawText("NOUN", 646, 160, 32, DARKGREEN);
+	  DrawText("VERB", 404, 160, 32, DARKGREEN);
 
 	  DrawText("VERB", 104, 575, 26, RAYWHITE);
 	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
