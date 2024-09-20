@@ -52,6 +52,7 @@ int main(void) {
 	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
 
 	  DrawText("+", 218, 548, 48, RAYWHITE);
+	  DrawText("-", 220, 638, 48, RAYWHITE);
 
 	  EndDrawing();
 	}
