@@ -23,6 +23,8 @@ int main(void) {
 	  DrawRectangle(posX, posY, rectWidth, rectHeight, DARKGREEN); 
 	  DrawRectangle(30, posY, 300, rectHeight, LIGHTGRAY); 
 	
+	  DrawRectangle(640, 30, 100, 50, LIME); //PROG 
+
 	  //black buttons below
 	  DrawRectangle(100, 550, 80, 80, BLACK); //VERB button
 	  DrawRectangle(100, 640, 80, 80, BLACK); //NOUN button
