@@ -25,14 +25,13 @@ int main(void) {
 	
 	  DrawRectangle(640, 30, 100, 50, LIME); //PROG 
 	  
-	  
-	  DrawRectangle(640, 180, 100, 50, LIME); //NOUN 
-	  DrawRectangle(400, 180, 100, 50, LIME); //VERB 
+	  DrawRectangle(640, 150, 100, 50, LIME); //NOUN 
+	  DrawRectangle(400, 150, 100, 50, LIME); //VERB 
 
           //separators
-	  DrawRectangle(400, 310, 340, 5, LIME); 
-	  DrawRectangle(400, 395, 340, 5, LIME); 
-	  DrawRectangle(400, 475, 340, 5, LIME); 
+	  DrawRectangle(400, 270, 340, 5, LIME); 
+	  DrawRectangle(400, 345, 340, 5, LIME); 
+	  DrawRectangle(400, 425, 340, 5, LIME); 
 
 	  //black buttons below
 	  DrawRectangle(100, 550, 80, 80, BLACK); //VERB button
