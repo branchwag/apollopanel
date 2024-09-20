@@ -27,6 +27,7 @@ int main(void) {
 	  
 	  
 	  DrawRectangle(640, 180, 100, 50, LIME); //NOUN 
+	  DrawRectangle(400, 180, 100, 50, LIME); //VERB 
 
 	  //black buttons below
 	  DrawRectangle(100, 550, 80, 80, BLACK); //VERB button
