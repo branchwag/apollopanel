@@ -17,9 +17,9 @@ int main(void) {
 	int posY = marginTop;
 
         Font monogram = LoadFont("monogram.ttf");
-	Vector2 position1 = {660, 40};
-	Vector2 position2 = {658, 160};
-	Vector2 position3 = {418, 160};
+	Vector2 position1 = {660, 38};
+	Vector2 position2 = {658, 158};
+	Vector2 position3 = {418, 158};
 
 	while (!WindowShouldClose()) {
 	  frameCount++;
