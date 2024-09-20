@@ -49,7 +49,10 @@ int main(void) {
 	  DrawRectangle(640, 640, 80, 80, BLACK); //RSET button
 	
 	  DrawText("VERB", 106, 575, 26, RAYWHITE);
-	  
+	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
+
+	  DrawText("+", 218, 548, 48, RAYWHITE);
+
 	  EndDrawing();
 	}
 
