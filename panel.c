@@ -57,6 +57,8 @@ int main(void) {
 	  DrawText("1", 315, 728, 48, RAYWHITE);
 	  DrawText("2", 400, 728, 48, RAYWHITE);
 	  DrawText("3", 490, 728, 48, RAYWHITE);
+	  DrawText("KEY", 565, 722, 26, RAYWHITE);
+	  DrawText("REL", 565, 722 + 30, 26, RAYWHITE);
 
 	  EndDrawing();
 	}
