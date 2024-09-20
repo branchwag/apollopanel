@@ -52,8 +52,11 @@ int main(void) {
 	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
 
 	  DrawText("+", 218, 548, 48, RAYWHITE);
+
 	  DrawText("-", 220, 638, 48, RAYWHITE);
 	  DrawText("4", 308, 638, 48, RAYWHITE);
+	  DrawText("5", 398, 638, 48, RAYWHITE);
+	  DrawText("6", 488, 638, 48, RAYWHITE);
 
 	  DrawText("0", 220, 728, 48, RAYWHITE);
 	  DrawText("1", 315, 728, 48, RAYWHITE);
