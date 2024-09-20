@@ -70,6 +70,9 @@ int main(void) {
 	  DrawText("KEY", 565, 722, 26, RAYWHITE);
 	  DrawText("REL", 565, 722 + 30, 26, RAYWHITE);
 
+	  DrawText("ENTR", 645, 575, 26, RAYWHITE);
+	  DrawText("RSET", 645, 665, 26, RAYWHITE);
+
 	  EndDrawing();
 	}
 
