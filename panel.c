@@ -53,6 +53,8 @@ int main(void) {
 
 	  DrawText("+", 218, 548, 48, RAYWHITE);
 	  DrawText("-", 220, 638, 48, RAYWHITE);
+	  DrawText("4", 308, 638, 48, RAYWHITE);
+
 	  DrawText("0", 220, 728, 48, RAYWHITE);
 	  DrawText("1", 315, 728, 48, RAYWHITE);
 	  DrawText("2", 400, 728, 48, RAYWHITE);
