@@ -57,6 +57,7 @@ int main(void) {
 	  DrawText("4", 308, 638, 48, RAYWHITE);
 	  DrawText("5", 398, 638, 48, RAYWHITE);
 	  DrawText("6", 488, 638, 48, RAYWHITE);
+	  DrawText("PRO", 562, 646, 30, RAYWHITE);
 
 	  DrawText("0", 220, 728, 48, RAYWHITE);
 	  DrawText("1", 315, 728, 48, RAYWHITE);
