@@ -24,8 +24,12 @@ int main(void) {
 	Color keyColor = BLACK;
 	Rectangle entrButton = {640, 550, 80, 80};
 
+	float clickTimer = 0.0f;
+	bool isButtonRed = false;
+
 	while (!WindowShouldClose()) {
 	  frameCount++;
+	  float deltaTime = GetFrameTime();
 	  BeginDrawing();
 	  ClearBackground(DARKGRAY);
 	  DrawRectangle(posX, posY, rectWidth, rectHeight, DARKGREEN); 
@@ -116,8 +120,18 @@ int main(void) {
 	    Vector2 mousePos = GetMousePosition();
 	    if (CheckCollisionPointRec(mousePos, entrButton)) {
 	      keyColor = RED;
+	      isButtonRed = true;
+	      clickTimer = 0.0f;
 	    }
 	  }
+
+         if (isButtonRed) {
+	    clickTimer += deltaTime;
+	    if (clickTimer >= 0.5f) {
+	      keyColor = BLACK;
+	      isButtonRed = false;
+	    }
+	}
 
 	  EndDrawing();
 	}
