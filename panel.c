@@ -3,6 +3,15 @@
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
 
+typedef struct {
+    Rectangle rect;
+    Color color;
+    const char* text;
+    int fontSize;
+} Button;
+
+#define NUM_BUTTONS 19
+
 int main(void) {
 	InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Apollo Panel");
 	SetTargetFPS(60);
@@ -22,7 +31,6 @@ int main(void) {
 	Vector2 position3 = {418, 158};
 	//mebbe int button var here since the black btns are always 80x80
 
-	Color keyColor = BLACK;
 	Rectangle verbButton = {100, 550, 80, 80};
 	Rectangle nounButton = {100, 640, 80, 80};
 	Rectangle plusButton = {190, 530, 80, 80};
@@ -43,8 +51,30 @@ int main(void) {
 	Rectangle entrButton = {640, 550, 80, 80};
         Rectangle resetButton = {640, 640, 80, 80};
 
-	float clickTimer = 0.0f;
-	bool isButtonRed = false;
+    Button buttons[NUM_BUTTONS] = {
+        {verbButton, BLACK, "VERB", 26},
+        {nounButton, BLACK, "NOUN", 26},
+        {plusButton, BLACK, "+", 48},
+        {sevenButton, BLACK, "7", 48},
+        {eightButton, BLACK, "8", 48},
+        {nineButton, BLACK, "9", 48},
+        {clearButton, BLACK, "CLR", 30},
+        {minusButton, BLACK, "-", 48},
+        {fourButton, BLACK, "4", 48},
+        {fiveButton, BLACK, "5", 48},
+        {sixButton, BLACK, "6", 48},
+        {proButton, BLACK, "PRO", 30},
+        {zeroButton, BLACK, "0", 48},
+        {oneButton, BLACK, "1", 48},
+        {twoButton, BLACK, "2", 48},
+        {threeButton, BLACK, "3", 48},
+        {keyrelButton, BLACK, "KEY\nREL", 26},
+        {entrButton, BLACK, "ENTR", 26},
+        {resetButton, BLACK, "RSET", 26}
+    };
+
+    float buttonTimers[NUM_BUTTONS] = {0};
+    const float BUTTON_RESET_TIME = 0.5f;
 
 	while (!WindowShouldClose()) {
 	  frameCount++;
@@ -61,29 +91,8 @@ int main(void) {
           //separators
 	  DrawRectangle(400, 270, 340, 5, LIME); 
 	  DrawRectangle(400, 345, 340, 5, LIME); 
-	  DrawRectangle(400, 425, 340, 5, LIME); 
-
-	  //black buttons below
-	  DrawRectangle(verbButton.x, verbButton.y, nounButton.width, nounButton.height, keyColor);
-	  DrawRectangle(nounButton.x, nounButton.y, nounButton.width, nounButton.height, keyColor);
-	  DrawRectangle(plusButton.x, plusButton.y, plusButton.width, plusButton.height, keyColor);
-	  DrawRectangle(sevenButton.x, sevenButton.y, sevenButton.width, sevenButton.height, keyColor);
-	  DrawRectangle(eightButton.x, eightButton.y, eightButton.width, eightButton.height, keyColor);
-	  DrawRectangle(nineButton.x, nineButton.y, nineButton.width, nineButton.height, keyColor);
-	  DrawRectangle(clearButton.x, clearButton.y, clearButton.width, clearButton.height, keyColor);
-	  DrawRectangle(minusButton.x, minusButton.y, minusButton.width, minusButton.height, keyColor);
-	  DrawRectangle(fourButton.x, fourButton.y, fourButton.width, fourButton.height, keyColor);
-	  DrawRectangle(fiveButton.x, fiveButton.y, fiveButton.width, fiveButton.height, keyColor);
-	  DrawRectangle(sixButton.x, sixButton.y, sixButton.width, sixButton.height, keyColor);
-	  DrawRectangle(proButton.x, proButton.y, proButton.width, proButton.height, keyColor);
-	  DrawRectangle(zeroButton.x, zeroButton.y, zeroButton.width, zeroButton.height, keyColor);
-	  DrawRectangle(oneButton.x, oneButton.y, oneButton.width, oneButton.height, keyColor);
-	  DrawRectangle(twoButton.x, twoButton.y, twoButton.width, twoButton.height, keyColor);
-	  DrawRectangle(threeButton.x, threeButton.y, threeButton.width, threeButton.height, keyColor);
-	  DrawRectangle(keyrelButton.x, keyrelButton.y, keyrelButton.width, keyrelButton.height, keyColor);
-	  DrawRectangle(entrButton.x, entrButton.y, entrButton.width, entrButton.height, keyColor);
-	  DrawRectangle(resetButton.x, resetButton.y, resetButton.width, resetButton.height, keyColor);
-	
+	  DrawRectangle(400, 425, 340, 5, LIME); 	  \
+	  
 	  DrawTextEx(monogram, "PROG", position1, 32, 1, DARKGREEN);
 	  DrawTextEx(monogram, "NOUN", position2, 32, 1, DARKGREEN);
 	  DrawTextEx(monogram, "VERB", position3, 32, 1, DARKGREEN);
@@ -103,51 +112,34 @@ int main(void) {
 	  DrawText("600", 590, 348, 86, LIME);
 	  DrawText("45000", 490, 428, 86, LIME);
 
-	  DrawText("VERB", 104, 575, 26, RAYWHITE);
-	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
+      // Handle button presses and draw buttons
+        for (int i = 0; i < NUM_BUTTONS; i++) {
+            if (buttonTimers[i] > 0) {
+                buttonTimers[i] -= deltaTime;
+                if (buttonTimers[i] <= 0) {
+                    buttons[i].color = BLACK;
+                }
+            }
 
-	  DrawText("+", 218, 548, 48, RAYWHITE);
-	  DrawText("7", 308, 548, 48, RAYWHITE);
-	  DrawText("8", 398, 548, 48, RAYWHITE);
-	  DrawText("9", 488, 548, 48, RAYWHITE);
-	  DrawText("CLR", 562, 556, 30, RAYWHITE);
+            if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+                Vector2 mousePos = GetMousePosition();
+                if (CheckCollisionPointRec(mousePos, buttons[i].rect)) {
+                    buttons[i].color = RED;
+                    buttonTimers[i] = BUTTON_RESET_TIME;
+                }
+            }
 
-	  DrawText("-", 220, 638, 48, RAYWHITE);
-	  DrawText("4", 308, 638, 48, RAYWHITE);
-	  DrawText("5", 398, 638, 48, RAYWHITE);
-	  DrawText("6", 488, 638, 48, RAYWHITE);
-	  DrawText("PRO", 562, 646, 30, RAYWHITE);
+            DrawRectangleRec(buttons[i].rect, buttons[i].color);
+            DrawText(buttons[i].text, 
+                     buttons[i].rect.x + buttons[i].rect.width/2 - MeasureText(buttons[i].text, buttons[i].fontSize)/2, 
+                     buttons[i].rect.y + buttons[i].rect.height/2 - buttons[i].fontSize/2, 
+                     buttons[i].fontSize, 
+                     RAYWHITE);
+        }
 
-	  DrawText("0", 220, 728, 48, RAYWHITE);
-	  DrawText("1", 315, 728, 48, RAYWHITE);
-	  DrawText("2", 400, 728, 48, RAYWHITE);
-	  DrawText("3", 490, 728, 48, RAYWHITE);
-	  DrawText("KEY", 565, 722, 26, RAYWHITE);
-	  DrawText("REL", 565, 722 + 30, 26, RAYWHITE);
+        EndDrawing();
+    }
 
-	  DrawText("ENTR", 645, 575, 26, RAYWHITE);
-	  DrawText("RSET", 645, 665, 26, RAYWHITE);
-
-	  if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
-	    Vector2 mousePos = GetMousePosition();
-	    if (CheckCollisionPointRec(mousePos, entrButton)) {
-	      keyColor = RED;
-	      isButtonRed = true;
-	      clickTimer = 0.0f;
-	    }
-	  }
-
-         if (isButtonRed) {
-	    clickTimer += deltaTime;
-	    if (clickTimer >= 0.5f) {
-	      keyColor = BLACK;
-	      isButtonRed = false;
-	    }
-	}
-
-	  EndDrawing();
-	}
-
-	CloseWindow();
+    CloseWindow();
 	return 0;
 }
