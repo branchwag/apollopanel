@@ -12,3 +12,6 @@ gcc -o apollopanel panel.c -lraylib -lGL -lm -lpthread -lrt -lX11
 
 Links that helped: 
 https://www.raylib.com/cheatsheet/cheatsheet.html
+
+  
+![Screenshot of Panel](screenshot.png)
