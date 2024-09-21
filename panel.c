@@ -20,9 +20,28 @@ int main(void) {
 	Vector2 position1 = {660, 38};
 	Vector2 position2 = {658, 158};
 	Vector2 position3 = {418, 158};
+	//mebbe int button var here since the black btns are always 80x80
 
 	Color keyColor = BLACK;
+	Rectangle verbButton = {100, 550, 80, 80};
+	Rectangle nounButton = {100, 640, 80, 80};
+	Rectangle plusButton = {190, 530, 80, 80};
+	Rectangle sevenButton = {280, 530, 80, 80};
+	Rectangle eightButton = {370, 530, 80, 80};
+	Rectangle nineButton = {460, 530, 80, 80};
+	Rectangle clearButton = {550, 530, 80, 80};
+	Rectangle minusButton = {190, 620, 80, 80};
+	Rectangle fourButton = {280, 620, 80, 80};
+	Rectangle fiveButton = {370, 620, 80, 80};
+	Rectangle sixButton = {460, 620, 80, 80};
+	Rectangle proButton = {550, 620, 80, 80};
+	Rectangle zeroButton = {190, 710, 80, 80};
+	Rectangle oneButton = {280, 710, 80, 80};
+	Rectangle twoButton = {370, 710, 80, 80};
+	Rectangle threeButton = {460, 710, 80, 80};
+	Rectangle keyrelButton = {550, 710, 80, 80};
 	Rectangle entrButton = {640, 550, 80, 80};
+        Rectangle resetButton = {640, 640, 80, 80};
 
 	float clickTimer = 0.0f;
 	bool isButtonRed = false;
@@ -36,7 +55,6 @@ int main(void) {
 	  DrawRectangle(30, posY, 300, rectHeight, LIGHTGRAY); 
 	
 	  DrawRectangle(640, 30, 100, 50, LIME); //PROG 
-	  
 	  DrawRectangle(640, 150, 100, 50, LIME); //NOUN 
 	  DrawRectangle(400, 150, 100, 50, LIME); //VERB 
 
@@ -46,31 +64,25 @@ int main(void) {
 	  DrawRectangle(400, 425, 340, 5, LIME); 
 
 	  //black buttons below
-
-	  DrawRectangle(100, 550, 80, 80, BLACK); //VERB button
-	  DrawRectangle(100, 640, 80, 80, BLACK); //NOUN button
-	
-	  DrawRectangle(190, 530, 80, 80, BLACK); // + button
-	  DrawRectangle(280, 530, 80, 80, BLACK); // 7 button
-	  DrawRectangle(370, 530, 80, 80, BLACK); // 8 button
-	  DrawRectangle(460, 530, 80, 80, BLACK); // 9 button
-	  DrawRectangle(550, 530, 80, 80, BLACK); // CLR button
-
-	  DrawRectangle(190, 620, 80, 80, BLACK); // 1 button
-	  DrawRectangle(280, 620, 80, 80, BLACK); // 4 button
-	  DrawRectangle(370, 620, 80, 80, BLACK); // 5 button
-	  DrawRectangle(460, 620, 80, 80, BLACK); // 6 button
-	  DrawRectangle(550, 620, 80, 80, BLACK); // PRO button
-	
-	  DrawRectangle(190, 710, 80, 80, BLACK); // 0 button
-	  DrawRectangle(280, 710, 80, 80, BLACK); // 1 button
-	  DrawRectangle(370, 710, 80, 80, BLACK); // 2 button
-	  DrawRectangle(460, 710, 80, 80, BLACK); // 3 button
-	  DrawRectangle(550, 710, 80, 80, BLACK); // KEYREL button
-
-	  DrawRectangle(entrButton.x, entrButton.y, entrButton.width, entrButton.height, keyColor); //ENTR button
-      
-	  DrawRectangle(640, 640, 80, 80, BLACK); //RSET button
+	  DrawRectangle(verbButton.x, verbButton.y, nounButton.width, nounButton.height, keyColor);
+	  DrawRectangle(nounButton.x, nounButton.y, nounButton.width, nounButton.height, keyColor);
+	  DrawRectangle(plusButton.x, plusButton.y, plusButton.width, plusButton.height, keyColor);
+	  DrawRectangle(sevenButton.x, sevenButton.y, sevenButton.width, sevenButton.height, keyColor);
+	  DrawRectangle(eightButton.x, eightButton.y, eightButton.width, eightButton.height, keyColor);
+	  DrawRectangle(nineButton.x, nineButton.y, nineButton.width, nineButton.height, keyColor);
+	  DrawRectangle(clearButton.x, clearButton.y, clearButton.width, clearButton.height, keyColor);
+	  DrawRectangle(minusButton.x, minusButton.y, minusButton.width, minusButton.height, keyColor);
+	  DrawRectangle(fourButton.x, fourButton.y, fourButton.width, fourButton.height, keyColor);
+	  DrawRectangle(fiveButton.x, fiveButton.y, fiveButton.width, fiveButton.height, keyColor);
+	  DrawRectangle(sixButton.x, sixButton.y, sixButton.width, sixButton.height, keyColor);
+	  DrawRectangle(proButton.x, proButton.y, proButton.width, proButton.height, keyColor);
+	  DrawRectangle(zeroButton.x, zeroButton.y, zeroButton.width, zeroButton.height, keyColor);
+	  DrawRectangle(oneButton.x, oneButton.y, oneButton.width, oneButton.height, keyColor);
+	  DrawRectangle(twoButton.x, twoButton.y, twoButton.width, twoButton.height, keyColor);
+	  DrawRectangle(threeButton.x, threeButton.y, threeButton.width, threeButton.height, keyColor);
+	  DrawRectangle(keyrelButton.x, keyrelButton.y, keyrelButton.width, keyrelButton.height, keyColor);
+	  DrawRectangle(entrButton.x, entrButton.y, entrButton.width, entrButton.height, keyColor);
+	  DrawRectangle(resetButton.x, resetButton.y, resetButton.width, resetButton.height, keyColor);
 	
 	  DrawTextEx(monogram, "PROG", position1, 32, 1, DARKGREEN);
 	  DrawTextEx(monogram, "NOUN", position2, 32, 1, DARKGREEN);
