@@ -67,6 +67,7 @@ int main(void) {
 	  DrawTextEx(monogram, "NOUN", position2, 32, 1, DARKGREEN);
 	  DrawTextEx(monogram, "VERB", position3, 32, 1, DARKGREEN);
 
+	  DrawText("61", 660, 196, 86, LIME);
 	  DrawText("+", 380, 300, 42, LIME);
 	  DrawText("+", 380, 380, 42, LIME);
 	  DrawText("+", 380, 460, 42, LIME);
