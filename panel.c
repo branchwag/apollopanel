@@ -21,6 +21,9 @@ int main(void) {
 	Vector2 position2 = {658, 158};
 	Vector2 position3 = {418, 158};
 
+	Color keyColor = BLACK;
+	Rectangle entrButton = {640, 550, 80, 80};
+
 	while (!WindowShouldClose()) {
 	  frameCount++;
 	  BeginDrawing();
@@ -39,6 +42,7 @@ int main(void) {
 	  DrawRectangle(400, 425, 340, 5, LIME); 
 
 	  //black buttons below
+
 	  DrawRectangle(100, 550, 80, 80, BLACK); //VERB button
 	  DrawRectangle(100, 640, 80, 80, BLACK); //NOUN button
 	
@@ -60,7 +64,8 @@ int main(void) {
 	  DrawRectangle(460, 710, 80, 80, BLACK); // 3 button
 	  DrawRectangle(550, 710, 80, 80, BLACK); // KEYREL button
 
-	  DrawRectangle(640, 550, 80, 80, BLACK); //ENTR button
+	  DrawRectangle(entrButton.x, entrButton.y, entrButton.width, entrButton.height, keyColor); //ENTR button
+      
 	  DrawRectangle(640, 640, 80, 80, BLACK); //RSET button
 	
 	  DrawTextEx(monogram, "PROG", position1, 32, 1, DARKGREEN);
@@ -106,6 +111,13 @@ int main(void) {
 
 	  DrawText("ENTR", 645, 575, 26, RAYWHITE);
 	  DrawText("RSET", 645, 665, 26, RAYWHITE);
+
+	  if (IsMouseButtonPressed(MOUSE_LEFT_BUTTON)) {
+	    Vector2 mousePos = GetMousePosition();
+	    if (CheckCollisionPointRec(mousePos, entrButton)) {
+	      keyColor = RED;
+	    }
+	  }
 
 	  EndDrawing();
 	}
