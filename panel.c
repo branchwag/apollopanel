@@ -67,11 +67,17 @@ int main(void) {
 	  DrawTextEx(monogram, "NOUN", position2, 32, 1, DARKGREEN);
 	  DrawTextEx(monogram, "VERB", position3, 32, 1, DARKGREEN);
 
+	  //PROG number
+	  DrawText("63", 644, 76, 86, LIME);
+	  //VERB number
 	  DrawText("06", 402, 196, 86, LIME);
-	  DrawText("61", 660, 196, 86, LIME);
+	  //NOUN number
+	  DrawText("61", 644, 196, 86, LIME);
+
 	  DrawText("+", 380, 300, 42, LIME);
 	  DrawText("+", 380, 380, 42, LIME);
 	  DrawText("+", 380, 460, 42, LIME);
+
 	  DrawText("1200", 566, 271, 86, LIME);
 	  DrawText("600", 590, 348, 86, LIME);
 	  DrawText("45000", 490, 428, 86, LIME);
