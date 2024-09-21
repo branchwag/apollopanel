@@ -71,9 +71,9 @@ int main(void) {
 	  DrawText("+", 380, 300, 42, LIME);
 	  DrawText("+", 380, 380, 42, LIME);
 	  DrawText("+", 380, 460, 42, LIME);
-	  DrawText("1200", 516, 271, 86, LIME);
-	  DrawText("600", 540, 348, 86, LIME);
-	  DrawText("45000", 440, 428, 86, LIME);
+	  DrawText("1200", 566, 271, 86, LIME);
+	  DrawText("600", 590, 348, 86, LIME);
+	  DrawText("45000", 490, 428, 86, LIME);
 
 	  DrawText("VERB", 104, 575, 26, RAYWHITE);
 	  DrawText("NOUN", 106, 665, 26, RAYWHITE);
