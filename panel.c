@@ -1,4 +1,5 @@
 #include "raylib.h"
+#include <string.h>
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 800
@@ -77,14 +78,17 @@ int main(void) {
     float buttonTimers[NUM_BUTTONS] = {0};
     const float BUTTON_RESET_TIME = 0.5f;
 
-	while (!WindowShouldClose()) {
-	  char verbNumber[] = "";
-	  char progNumber[] = "00";
-	  char nounNumber[] = "";
-	  char lineOneNumber[] = "";
-	  char lineTwoNumber[] = "";
-	  char lineThreeNumber[] = "";
+    char verbNumber[3] = "";
+    char progNumber[3] = "00";
+    char nounNumber[3] = "";
+    char lineOneNumber[] = "";
+    char lineTwoNumber[] = "";
+    char lineThreeNumber[] = "";
 
+    bool verbMode = false;
+    int verbDigitCount = 0;
+
+	while (!WindowShouldClose()) {
 	  frameCount++;
 	  float deltaTime = GetFrameTime();
 	  BeginDrawing();
@@ -134,6 +138,21 @@ int main(void) {
                 if (CheckCollisionPointRec(mousePos, buttons[i].rect)) {
                     buttons[i].color = RED;
                     buttonTimers[i] = BUTTON_RESET_TIME;
+
+		    //verb btn press
+		    if(strcmp(buttons[i].text, "VERB") == 0) {
+			verbMode = true;
+			verbDigitCount = 0;
+			memset(verbNumber, 0, sizeof(verbNumber));
+		    }
+
+		    else if (verbMode && verbDigitCount < 2 && buttons[i].text[0] >= '0' && buttons[i].text[0] <= '9') {
+			verbNumber[verbDigitCount] = buttons[i].text[0];
+			verbDigitCount++;
+			if (verbDigitCount == 2) {
+			    verbMode = false;
+			}
+		    }
                 }
             }
 
@@ -144,6 +163,9 @@ int main(void) {
                      buttons[i].fontSize, 
                      RAYWHITE);
         }
+
+	//updated verb number
+	DrawText(verbNumber, 402, 196, 86, LIME);
 
         EndDrawing();
     }
