@@ -51,6 +51,7 @@ int main(void) {
 	Rectangle entrButton = {640, 550, 80, 80};
         Rectangle resetButton = {640, 640, 80, 80};
 
+    //rect, color, text, fontsize
     Button buttons[NUM_BUTTONS] = {
         {verbButton, BLACK, "VERB", 26},
         {nounButton, BLACK, "NOUN", 26},
@@ -77,6 +78,13 @@ int main(void) {
     const float BUTTON_RESET_TIME = 0.5f;
 
 	while (!WindowShouldClose()) {
+	  char verbNumber[] = "";
+	  char progNumber[] = "00";
+	  char nounNumber[] = "";
+	  char lineOneNumber[] = "";
+	  char lineTwoNumber[] = "";
+	  char lineThreeNumber[] = "";
+
 	  frameCount++;
 	  float deltaTime = GetFrameTime();
 	  BeginDrawing();
@@ -98,19 +106,19 @@ int main(void) {
 	  DrawTextEx(monogram, "VERB", position3, 32, 1, DARKGREEN);
 
 	  //PROG number
-	  DrawText("63", 644, 76, 86, LIME);
+	  DrawText(progNumber, 644, 76, 86, LIME);
 	  //VERB number
-	  DrawText("06", 402, 196, 86, LIME);
+	  DrawText(verbNumber, 402, 196, 86, LIME);
 	  //NOUN number
-	  DrawText("61", 644, 196, 86, LIME);
+	  DrawText(nounNumber, 644, 196, 86, LIME);
 
 	  DrawText("+", 380, 300, 42, LIME);
 	  DrawText("+", 380, 380, 42, LIME);
 	  DrawText("+", 380, 460, 42, LIME);
 
-	  DrawText("1200", 566, 271, 86, LIME);
-	  DrawText("600", 590, 348, 86, LIME);
-	  DrawText("45000", 490, 428, 86, LIME);
+	  DrawText(lineOneNumber, 566, 271, 86, LIME);
+	  DrawText(lineTwoNumber, 590, 348, 86, LIME);
+	  DrawText(lineThreeNumber, 490, 428, 86, LIME);
 
       // Handle button presses and draw buttons
         for (int i = 0; i < NUM_BUTTONS; i++) {
